@@ -11,9 +11,11 @@ using System.Data.SqlClient;
 
 namespace GallerySQL
 {
-    public partial class Form2 : Form
+    public partial class Crud : Form
     {
-        public Form2()
+
+        private DataSet galleryset = new DataSet();
+        public Crud()
         {
             InitializeComponent();
             selectionscreen.Visible = true;
@@ -154,23 +156,23 @@ namespace GallerySQL
 
         private void backbutton_Click(object sender, EventArgs e)
         {
-            if (deletescreen.Visible) // Önce deletescreen durumunu kontrol edin
+            if (deletescreen.Visible) 
             {
-                deletescreen.Visible = false; // Deletescreen'i gizleyin
-                todeletepage.Visible = true; // İlgili sayfayı gösterin
-                updatescreen.Visible = true; // Updatescreen'in görünürlüğünü ayarlayın
+                deletescreen.Visible = false; 
+                todeletepage.Visible = true; 
+                updatescreen.Visible = true; 
             }
-            else if (updatescreen.Visible) // Eğer updatescreen görünürse
+            else if (updatescreen.Visible) 
             {
-                updatescreen.Visible = false; // Updatescreen'i gizleyin
-                insertscreen.Visible = true; // Insertscreen'i gösterin
+                updatescreen.Visible = false; 
+                insertscreen.Visible = true; 
                 toupdatescreen.Visible = true;
                 toinsertpage.Visible = false;
             }
-            else if (insertscreen.Visible) // Eğer insertscreen görünürse
+            else if (insertscreen.Visible) 
             {
-                insertscreen.Visible = false; // Insertscreen'i gizleyin
-                toinsertpage.Visible = true; // İlgili sayfayı gösterin
+                insertscreen.Visible = false; 
+                toinsertpage.Visible = true; 
                 toupdatescreen.Visible = false;
             }
 
@@ -199,33 +201,30 @@ namespace GallerySQL
         private void button1_Click(object sender, EventArgs e)
         {
             SqlDataAdapter adapter = new SqlDataAdapter("Select * from stock", conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            adapter.Fill(galleryset);
+            dataGridView1.DataSource = galleryset.Tables[0];
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             SqlDataAdapter adapter = new SqlDataAdapter("Select * from cost", conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            adapter.Fill(galleryset);
+            dataGridView1.DataSource = galleryset.Tables[0];
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             SqlDataAdapter adapter = new SqlDataAdapter("Select * from customers", conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+
+            adapter.Fill(galleryset);
+            dataGridView1.DataSource = galleryset.Tables[0];
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             SqlDataAdapter adapter = new SqlDataAdapter("Select * from orders", conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            adapter.Fill(galleryset);
+            dataGridView1.DataSource = galleryset.Tables[0];
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -463,6 +462,13 @@ namespace GallerySQL
                 MessageBox.Show("Nothing was deleted :)");
             }
             
+        }
+
+        private void searchbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Search search = new Search();
+            search.Show();
         }
     }
 }

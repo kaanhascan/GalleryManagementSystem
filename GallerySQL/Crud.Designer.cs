@@ -1,6 +1,6 @@
 ﻿namespace GallerySQL
 {
-    partial class Form2
+    partial class Crud
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Crud));
             this.insertscreen = new System.Windows.Forms.Panel();
             this.updatescreen = new System.Windows.Forms.Panel();
             this.deletescreen = new System.Windows.Forms.Panel();
@@ -158,6 +158,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.toinsertpage = new System.Windows.Forms.Button();
+            this.searchbutton = new System.Windows.Forms.Button();
             this.insertscreen.SuspendLayout();
             this.updatescreen.SuspendLayout();
             this.deletescreen.SuspendLayout();
@@ -197,8 +198,7 @@
             this.insertscreen.Controls.Add(this.insertstock);
             this.insertscreen.Controls.Add(this.label2);
             this.insertscreen.Controls.Add(this.toupdatescreen);
-            this.insertscreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.insertscreen.Location = new System.Drawing.Point(0, 0);
+            this.insertscreen.Location = new System.Drawing.Point(0, 178);
             this.insertscreen.Name = "insertscreen";
             this.insertscreen.Size = new System.Drawing.Size(781, 477);
             this.insertscreen.TabIndex = 7;
@@ -224,8 +224,7 @@
             this.updatescreen.Controls.Add(this.updatescreenupdatestockbutton);
             this.updatescreen.Controls.Add(this.updatescreenlabel);
             this.updatescreen.Controls.Add(this.button5);
-            this.updatescreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.updatescreen.Location = new System.Drawing.Point(0, 0);
+            this.updatescreen.Location = new System.Drawing.Point(0, 53);
             this.updatescreen.Name = "updatescreen";
             this.updatescreen.Size = new System.Drawing.Size(781, 477);
             this.updatescreen.TabIndex = 12;
@@ -244,8 +243,7 @@
             this.deletescreen.Controls.Add(this.deletefromstockbutton);
             this.deletescreen.Controls.Add(this.button6);
             this.deletescreen.Controls.Add(this.deletepagelabel);
-            this.deletescreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deletescreen.Location = new System.Drawing.Point(0, 0);
+            this.deletescreen.Location = new System.Drawing.Point(0, 76);
             this.deletescreen.Name = "deletescreen";
             this.deletescreen.Size = new System.Drawing.Size(781, 477);
             this.deletescreen.TabIndex = 27;
@@ -1666,6 +1664,7 @@
             // 
             // selectionscreen
             // 
+            this.selectionscreen.Controls.Add(this.searchbutton);
             this.selectionscreen.Controls.Add(this.insertscreen);
             this.selectionscreen.Controls.Add(this.label1);
             this.selectionscreen.Controls.Add(this.dataGridView1);
@@ -1749,13 +1748,24 @@
             this.toinsertpage.UseVisualStyleBackColor = false;
             this.toinsertpage.Click += new System.EventHandler(this.toinsertpage_Click);
             // 
-            // Form2
+            // searchbutton
+            // 
+            this.searchbutton.BackColor = System.Drawing.Color.PeachPuff;
+            this.searchbutton.Location = new System.Drawing.Point(12, 47);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(107, 23);
+            this.searchbutton.TabIndex = 18;
+            this.searchbutton.Text = "Search";
+            this.searchbutton.UseVisualStyleBackColor = false;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
+            // 
+            // Crud
             // 
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(781, 477);
             this.Controls.Add(this.selectionscreen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "Crud";
             this.insertscreen.ResumeLayout(false);
             this.insertscreen.PerformLayout();
             this.updatescreen.ResumeLayout(false);
@@ -1932,5 +1942,6 @@
         private System.Windows.Forms.Button deletecustomerbutton;
         private System.Windows.Forms.Button deletefromstockbutton;
         private System.Windows.Forms.Button deletebutton;
+        private System.Windows.Forms.Button searchbutton;
     }
 }
