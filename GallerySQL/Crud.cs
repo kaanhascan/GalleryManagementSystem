@@ -200,32 +200,68 @@ namespace GallerySQL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("Select * from stock", conn);
-            adapter.Fill(galleryset);
+            
+            if (galleryset.Tables.Count > 0)
+            {
+                galleryset.Tables.Clear();
+            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM stock", conn);
+            DataTable stockTable = new DataTable();
+            adapter.Fill(stockTable);
+            galleryset.Tables.Add(stockTable);
+
             dataGridView1.DataSource = galleryset.Tables[0];
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("Select * from cost", conn);
-            adapter.Fill(galleryset);
+           
+            if (galleryset.Tables.Count > 0)
+            {
+                galleryset.Tables.Clear();
+            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM cost", conn);
+            DataTable costTable = new DataTable();
+            adapter.Fill(costTable);
+            galleryset.Tables.Add(costTable);
+
             dataGridView1.DataSource = galleryset.Tables[0];
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("Select * from customers", conn);
+            
+            if (galleryset.Tables.Count > 0)
+            {
+                galleryset.Tables.Clear();
+            }
 
-            adapter.Fill(galleryset);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM customers", conn);
+            DataTable customersTable = new DataTable();
+            adapter.Fill(customersTable);
+            galleryset.Tables.Add(customersTable);
+
             dataGridView1.DataSource = galleryset.Tables[0];
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("Select * from orders", conn);
-            adapter.Fill(galleryset);
+            
+            if (galleryset.Tables.Count > 0)
+            {
+                galleryset.Tables.Clear();
+            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM orders", conn);
+            DataTable ordersTable = new DataTable();
+            adapter.Fill(ordersTable);
+            galleryset.Tables.Add(ordersTable);
+
             dataGridView1.DataSource = galleryset.Tables[0];
         }
+
 
         private void button5_Click(object sender, EventArgs e)
         {

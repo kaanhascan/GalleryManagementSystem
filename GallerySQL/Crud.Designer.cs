@@ -151,6 +151,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.toupdatescreen = new System.Windows.Forms.Button();
             this.selectionscreen = new System.Windows.Forms.Panel();
+            this.searchbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
@@ -158,7 +159,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.toinsertpage = new System.Windows.Forms.Button();
-            this.searchbutton = new System.Windows.Forms.Button();
             this.insertscreen.SuspendLayout();
             this.updatescreen.SuspendLayout();
             this.deletescreen.SuspendLayout();
@@ -198,7 +198,8 @@
             this.insertscreen.Controls.Add(this.insertstock);
             this.insertscreen.Controls.Add(this.label2);
             this.insertscreen.Controls.Add(this.toupdatescreen);
-            this.insertscreen.Location = new System.Drawing.Point(0, 178);
+            this.insertscreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.insertscreen.Location = new System.Drawing.Point(0, 0);
             this.insertscreen.Name = "insertscreen";
             this.insertscreen.Size = new System.Drawing.Size(781, 477);
             this.insertscreen.TabIndex = 7;
@@ -224,7 +225,8 @@
             this.updatescreen.Controls.Add(this.updatescreenupdatestockbutton);
             this.updatescreen.Controls.Add(this.updatescreenlabel);
             this.updatescreen.Controls.Add(this.button5);
-            this.updatescreen.Location = new System.Drawing.Point(0, 53);
+            this.updatescreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updatescreen.Location = new System.Drawing.Point(0, 0);
             this.updatescreen.Name = "updatescreen";
             this.updatescreen.Size = new System.Drawing.Size(781, 477);
             this.updatescreen.TabIndex = 12;
@@ -243,7 +245,8 @@
             this.deletescreen.Controls.Add(this.deletefromstockbutton);
             this.deletescreen.Controls.Add(this.button6);
             this.deletescreen.Controls.Add(this.deletepagelabel);
-            this.deletescreen.Location = new System.Drawing.Point(0, 76);
+            this.deletescreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deletescreen.Location = new System.Drawing.Point(0, 0);
             this.deletescreen.Name = "deletescreen";
             this.deletescreen.Size = new System.Drawing.Size(781, 477);
             this.deletescreen.TabIndex = 27;
@@ -1664,7 +1667,6 @@
             // 
             // selectionscreen
             // 
-            this.selectionscreen.Controls.Add(this.searchbutton);
             this.selectionscreen.Controls.Add(this.insertscreen);
             this.selectionscreen.Controls.Add(this.label1);
             this.selectionscreen.Controls.Add(this.dataGridView1);
@@ -1673,11 +1675,23 @@
             this.selectionscreen.Controls.Add(this.button2);
             this.selectionscreen.Controls.Add(this.button1);
             this.selectionscreen.Controls.Add(this.toinsertpage);
+            this.selectionscreen.Controls.Add(this.searchbutton);
             this.selectionscreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.selectionscreen.Location = new System.Drawing.Point(0, 0);
             this.selectionscreen.Name = "selectionscreen";
             this.selectionscreen.Size = new System.Drawing.Size(781, 477);
             this.selectionscreen.TabIndex = 8;
+            // 
+            // searchbutton
+            // 
+            this.searchbutton.BackColor = System.Drawing.Color.PeachPuff;
+            this.searchbutton.Location = new System.Drawing.Point(12, 47);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(107, 23);
+            this.searchbutton.TabIndex = 18;
+            this.searchbutton.Text = "Search";
+            this.searchbutton.UseVisualStyleBackColor = false;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
             // label1
             // 
@@ -1747,17 +1761,6 @@
             this.toinsertpage.Text = "INSERT PAGE";
             this.toinsertpage.UseVisualStyleBackColor = false;
             this.toinsertpage.Click += new System.EventHandler(this.toinsertpage_Click);
-            // 
-            // searchbutton
-            // 
-            this.searchbutton.BackColor = System.Drawing.Color.PeachPuff;
-            this.searchbutton.Location = new System.Drawing.Point(12, 47);
-            this.searchbutton.Name = "searchbutton";
-            this.searchbutton.Size = new System.Drawing.Size(107, 23);
-            this.searchbutton.TabIndex = 18;
-            this.searchbutton.Text = "Search";
-            this.searchbutton.UseVisualStyleBackColor = false;
-            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
             // Crud
             // 
